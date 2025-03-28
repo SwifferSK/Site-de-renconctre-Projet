@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>Projet 4</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <link rel='stylesheet' type='text/css' media='screen' href='css/style.css'>
+</head>
+<body>
+  <main>
+    <script src=" /platform.js" async></script>
+    <div class="elfsight-app-4ddb2ed8-6afc-4dc6-92c2-9b32e221f0f2" data-elfsight-app-lazy></div>
+    <img src="images/Logo2.png" class="logo2">
+    <div class="profiles">
+      <div class="profile">
+        <div class="profile__image" style="background-image: url('images/Homme1.jpg');"></div>
+        <div class="profile__infos">
+          <div class="profile__name">Pierre <span class="profile__age">35</span></div>
+          <div class="profile__description">J'aime tout ce que tu aime ^^</div>
+        </div>
+      </div>
+      <div class="profile">
+        <div class="profile__image" style="background-image: url('images/Femme2.jpg');"></div>
+        <div class="profile__infos">
+          <div class="profile__name">Laurie <span class="profile__age">20</span></div>
+          <div class="profile__description">j'aime bien le contact </div>
+        </div>
+      </div>
+      <div class="profile">
+        <div class="profile__image" style="background-image: url('images/Femme1.jpg');"></div>
+        <div class="profile__infos">
+          <div class="profile__name">Claire <span class="profile__age">23</span></div>
+          <div class="profile__description">je préfere les rencontres dans la vrai vie.</div>
+        </div>
+      </div>
+    </div>
+    <div class="bottombar">
+      <div class="bottombar__button">
+        <img src="images/icon-next.svg" id="next-button">
+      </div>
+      <div class="bottombar__button">
+        <img src="images/icon-heart.svg" id="like-button">
+        <div id="popup-container"></div>
+      </div>
+    </div>
+  </main>
+  <div id="popup" class="popups">
+    <div class="popup-content">
+      <span id="close-popup" class="close-button">&times;</span>
+      <p>-90% SUR L'ABONNEMENT PREMIUM !!! </p>
+      <button onclick="window.location.href = 'Abonnements.html'">YES I WANT IT !!!</button>
+    </div>
+  </div>
+  <div id="swipe-popup" class="popups" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: rgba(0, 0, 0, 0.8); color: white; border-radius: 10px; padding: 20px; text-align: center; z-index: 1000;">
+    <div class="popup-content">
+      <span id="close-swipe-popup" class="close-button" style="color: white; font-size: 24px; cursor: pointer;">&times;</span>
+      <p>Le nombre de swipes est dépassé !</p>
+      <button onclick="window.location.href = 'Abonnements.html'" style="background-color: #ff4081; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">I WANT MORE !</button>
+    </div>
+    <div id="like-popup" class="popups" style="display: none;">
+      <div class="popup-content">
+        <span id="close-like-popup" class="close-button">&times;</span>
+        <p>Merci pour votre like !</p>
+        <p>Ce popup disparaîtra dans <span id="like-timer">30</span> secondes.</p>
+      </div>
+    </div>
+  </div>
+  <div id="overlay" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); z-index: 999;"></div>
+  <script src='js/hammer.min.js'></script>
+  <script src='js/main.js'></script>
+</body>
+</html>

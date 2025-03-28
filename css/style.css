@@ -1,0 +1,251 @@
+profile {
+  display: none;
+  }
+  
+profile:first-child {
+    display: block;
+  }
+:root {
+  --light-grey:#ececec;
+  --dark-grey:#acacac;
+  --green:#4CAF50;
+  --red:#FF5252;
+  --black-transparent:rgba(0,0,0, 0.8);
+
+  --transition-time:.4s;
+}
+
+* {
+  box-sizing: border-box;
+  margin:0;
+  padding: 0;
+}
+
+html {
+  background:var(--light-grey);
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  width: 100%;
+  height:100vh;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  padding-top: 42px;
+}
+
+main {
+  width: 300px;
+  max-width: 90%;
+}
+
+img {
+  max-width: 100%;
+}
+
+.profiles {
+  width:100%;
+  position: relative;
+  height:450px;
+}
+
+.profile {
+  position: absolute;
+  left:0px;
+  top:0px;
+  width:100%;
+  border-radius: 25px;
+  overflow: hidden;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  cursor:pointer;
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+
+.profiles::before {
+  content:'Plus rien à matcher...';
+  color:var(--dark-grey);
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  height:100%;
+}
+
+.profile__image {
+  height: 0;
+  padding-bottom:150%;
+  background-size: cover;
+  background-position: center center;
+}
+
+.profile__infos {
+  padding:25px;
+  position:absolute;
+  bottom:0px;
+  background:linear-gradient(0deg, black, transparent);
+  width: 100%;
+}
+
+.profile__name {
+  color:white;
+  font-weight: bold;
+  font-size:22px;
+}
+
+.profile__age {
+  color:var(--light-grey);
+  font-weight: normal;
+}
+
+.profile__description {
+  color:white;
+  font-size:13px;
+}
+
+
+.bottombar {
+  margin-top:24px;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  gap:24px;
+}
+
+.bottombar__button {
+  width: 64px;
+  height: 64px;
+  border-radius:100%;
+  background:white; 
+  padding:16px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  transition:.4s;
+}
+
+.bottombar__button:hover {
+  cursor:pointer;
+  opacity:0.8;
+}
+
+.profile--match {
+  transition: var(--transition-time);
+  transform:translateX(1500px) translateY(600px) rotate(90deg);
+}
+
+.profile--next {
+  transition: var(--transition-time);
+  transform:translateX(-1500px) translateY(600px) rotate(-90deg);
+}
+
+.profile--back {
+  transition:var(--transition-time);
+}
+
+.profile--matching::after, .profile--nexting::after {
+  content:'NEXT';
+  font-weight: bold;
+  font-size:28px;
+  padding:8px 12px;
+  border:solid 2px var(--red);
+  color:var(--red);
+  background:var(--black-transparent);
+  position:absolute;
+  top:24px;
+  right:12px;
+  border-radius: 4px;
+  transform:rotate(24deg);
+} 
+
+.profile--nexting::after {
+  content:'MATCH';
+  border:solid 2px var(--green);
+  color:var(--green);
+}
+.popups {
+  display: none; /* Masqué par défaut */
+  padding: 20%;
+  position: fixed; /* Positionné par rapport à la fenêtre */
+  z-index: 1; /* Au-dessus de tout le contenu */
+  background-color: rgba(0, 0, 0, 0); /* Fond noir transparent */
+}
+
+.popup {
+  position: absolute;
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  display: none;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.close-button {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+  color: rgb(195, 27, 27);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.popup-content {
+  background-color: #f9f9f9;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  width: 100%;
+  max-width: 500px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.popup-content p {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.popup-content button {
+  background-color: #4CAF50; /* Vert */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.popup-content button:hover {
+  background-color: #45a049; /* Vert foncé */
+}
+
+.logo2 {
+  display: block;
+  margin: 0 auto; 
+  margin-bottom: 1px; 
+  max-width: 50%; 
+  transform: scale(2.4);
+}
+

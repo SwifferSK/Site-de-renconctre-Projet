@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abonnements - Love Paid</title>
+    <link rel='stylesheet' type='text/css' media='screen' href='css/Abonnements.css'>
+
+</head>
+<body>
+     <a href="index.html" class="top-right-button">Retour à l'accueil</a>
+    <div class="countdown-container">
+        <p>Offre spéciale se termine dans :</p>
+        <div id="countdown">
+            <span id="hours"></span> Heures 
+            <span id="minutes"></span> Minutes 
+            <span id="seconds"></span> Secondes
+        </div>
+    </div>
+    <div class="container">
+        <h1>Choisissez votre abonnement</h1>
+        <a href="#" class="button"  id="rat" >Abonnement Rat </a>
+        <a href="#" class="button">Abonnement Moyen</a>
+        <a href="#" class="buttons" id="premium-button">Abonnement PREMIUM</a>
+    </div>
+    <div id="video-container">
+        <button id="close-button">X</button>
+        <video width="500" height="450" controls>
+            <source src="images/pub.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <!-- Pop-up de paiement -->
+    <div class="popup-overlay" id="popup-overlay"></div>
+    <div class="popupss" id="payment-popup">
+        <h2>Paiement</h2>
+        <p>Entrez vos informations de paiement ci-dessous :</p>
+        <form>
+            <label for="card-number">Numéro de carte :</label>
+            <input type="text" id="card-number" name="card-number" pattern="\d{16}" maxlength="16" required><br><br>
+            <label for="expiry-date">Date d'expiration :</label>
+            <input type="month" id="expiry-date" name="expiry-date" required><br><br>
+            <label for="cvv">CVV :</label>
+            <input type="text" id="cvv" name="cvv" pattern="\d{3}" maxlength="3" required><br><br>
+            <label for="amount">Prix  :</label>
+            <input type="text" id="amount" name="amount" value="ONLY 99€" readonly><br><br>
+            <button type="submit">Payer</button>
+        </form>
+        <button id="close-popup">Fermer</button>
+    </div>
+  
+    <script src="js/abonnement.js"></script>
+</body>
+</html>
